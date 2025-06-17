@@ -285,22 +285,22 @@ select c.*
 
 -- 18 cases with atleast one homicide and all other robbery
 update suspects
-set name = 'Unknown',[description] = 'same suspect from homicide now in robbery', criminalHistory = 'suspected robbery earlier'
-where suspectID = 8;
+SET name = 'Unknown',[description] = 'same suspect from homicide now in robbery', criminalHistory = 'suspected robbery earlier'
+WHERE suspectID = 8;
 
 SELECT s.suspectID, s.name, c.incidentType, s.description, s.criminalHistory
-FROM suspects s
-JOIN crime c ON s.crimeID = c.crimeID
-WHERE s.name IN (
-    SELECT s.name
     FROM suspects s
-    JOIN crime c ON s.crimeID = c.crimeID
-    WHERE c.incidentType IN ('Homicide', 'Robbery')
-    GROUP BY s.name
-    HAVING 
-        COUNT(DISTINCT CASE WHEN c.incidentType = 'Homicide' THEN 1 END) >= 1 AND
-        COUNT(DISTINCT CASE WHEN c.incidentType = 'Robbery' THEN 1 END) >= 1
-);
+    join crime c ON s.crimeID = c.crimeID
+    WHERE s.name in (
+        SELECT s.name
+        FROM suspects s
+        join crime c ON s.crimeID = c.crimeID
+        WHERE c.incidentType in ('Homicide', 'Robbery')
+        GROUP BY s.name
+        HAVING 
+            count(DISTINCT CASE WHEN c.incidentType = 'Homicide' THEN 1 END) >= 1 AND
+            count(DISTINCT CASE WHEN c.incidentType = 'Robbery' THEN 1 END) >= 1
+    );
 
 
 -- 19 incidents and suspects, show 'no suspects' if none
