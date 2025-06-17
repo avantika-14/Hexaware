@@ -298,7 +298,7 @@ SELECT s.suspectID, s.name, c.incidentType, s.description, s.criminalHistory
         WHERE c.incidentType in ('Homicide', 'Robbery')
         GROUP BY s.name
         HAVING 
-            count(DISTINCT CASE WHEN c.incidentType = 'Homicide' THEN 1 END) >= 1 AND
+            count(DISTINCT CASE WHEN c.incidentType = 'Homicide' THEN 1 END) >= 1 and
             count(DISTINCT CASE WHEN c.incidentType = 'Robbery' THEN 1 END) >= 1
     );
 
