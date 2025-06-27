@@ -193,7 +193,8 @@ namespace HospitalDBManagement.Main
             Console.WriteLine(success ? "Appointment cancelled successfully!" : "Failed to cancel appointment.");
         }
 
-        static void DisplayAppointments(List<Appointment> appointments, string filterInfo)
+        #helper method
+        private static void DisplayAppointments(List<Appointment> appointments, string filterInfo)
         {
             Console.WriteLine($"\nFound {appointments.Count} appointments {filterInfo}:");
 
