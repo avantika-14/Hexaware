@@ -1,0 +1,47 @@
+VirtualArtGallery (Console App)
+│
+├── Main (program.cs)
+│
+├── DAO (Class Library)
+│   └── Interface
+│       └── Implementations
+│
+├── DAOEF (Class Library) - (additional)
+│   └── InterfaceEF
+│       └── Implementations
+│
+├── Entity (Class Library)
+│   └── Tables
+│       ├── artists
+│       ├── artworks
+│       ├── users
+│       ├── gallery
+│       ├── artwork gallery
+│       └── user favorite artwork
+│
+├── EntityEF (Class Library) - (additional)
+│   └── Tables
+│       ├── artists
+│       ├── artworks
+│       ├── users
+│       ├── gallery
+│       ├── artwork gallery
+│       └── user favorite artwork
+│
+├── Exceptions (Class Library)
+│   ├── Artist Not Found         - (additional)
+│   ├── Artwork Not Found
+│   ├── Favorite Not Found       - (additional)
+│   ├── Gallery Not Found        - (additional)
+│   └── Users Not Found
+│
+├── Context (Class Library) - (additional)
+│   └── DBContext
+│
+├── Utils (Class Library)
+│   ├── DBConnection
+│   └── DBProperty
+│
+└── Testing
+    ├── Artwork and Favorite Test - (additional)
+    └── Gallery Test   
