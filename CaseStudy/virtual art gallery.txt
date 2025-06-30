@@ -43,5 +43,5 @@ VirtualArtGallery (Console App)
 │   └── DBProperty
 │
 └── Testing
-    ├── Artwork and Favorite Test - (additional)
-    └── Gallery Test   
+    ├── Artwork and Favorite Test 
+    └── Gallery Test - (additional)  
